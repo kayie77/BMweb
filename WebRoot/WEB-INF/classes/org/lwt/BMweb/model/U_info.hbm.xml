@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- 指定Hibernate映射文件的DTD信息 
+ Hibernate映射文件的根元素 -->
+<hibernate-mapping  package="org.lwt.BMweb.model">
+	<class name="U_info" table="u_info">
+  		<!-- 映射标识属性 -->
+        <id column="u_id" name="u_id" type="integer">
+   			 <!-- 指定使用identity主键生成策略 -->
+            <generator class="identity"/>
+        </id>
+ 		 <!-- 映射普通属性 -->
+        <property column="identity" length="30" name="identity" unique="true" not-null="true" type="string"/>
+        <property column="name" length="30" name="name" not-null="true" type="string"/>
+         <property column="sex" length="30" name="sex" not-null="true" type="string"/> 
+         <property column="birthday" length="30" name="birthday" not-null="true" type="date"/>
+        <property column="political" length="30" name="political" not-null="true" type="string"/>
+         <property column="gradShool" length="30" name="gradShool" not-null="true" type="string"/>
+         <property column="gradTime" length="30" name="gradTime" not-null="true" type="date"/>
+         <property column="gradCate" length="30" name="gradCate" not-null="true" type="string"/>
+         <property column="education" length="30" name="education" not-null="true" type="string"/>
+         <property column="results" length="30" name="results" not-null="true" type="string"/>
+         <property column="homeAddress" length="30" name="homeAddress" not-null="true" type="string"/>
+         
+         <property column="address" length="30" name="address" not-null="true" type="string"/>
+         <property column="t_name" length="30" name="t_name" not-null="true" type="string"/>
+         <property column="code" length="30" name="code" not-null="true" type="string"/>
+         <property column="telephone" length="30" name="telephone" not-null="true" type="string"/>
+         <property column="email" length="30" name="email" not-null="true" type="string"/>
+         <property column="qq" length="30" name="qq" not-null="true" type="string"/>
+         <property column="remarks" length="30" name="remarks" type="string"/> 
+       <!-- name对应的是java文件每个属性的名字，而cloumn必须和数据表还有jsp文件的请求参数name的名字相同。   -->
+         <many-to-one name="nation" column="n_id"  not-null="true" lazy="false"/>
+        <many-to-one name="place" column="p_id"  not-null="true" lazy="false"/> 
+	</class>
+</hibernate-mapping>

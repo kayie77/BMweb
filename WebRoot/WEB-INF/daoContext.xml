@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="GBK"?>
+<!-- 指定Spring配置文件的Schema信息 -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<!-- 配置DAO组件的模板 -->
+ 	<bean id="daoTemplate" abstract="true" lazy-init="true"
+        p:sessionFactory-ref="sessionFactory"/>
+
+    <bean id="adminDao"
+        class="org.lwt.BMweb.dao.impl.AdminDaoImpl"
+        parent="daoTemplate"/>
+    <bean id="nationDao"
+        class="org.lwt.BMweb.dao.impl.NationDaoImpl"
+        parent="daoTemplate"/>
+    <bean id="placeDao"
+        class="org.lwt.BMweb.dao.impl.PlaceDaoImpl"
+        parent="daoTemplate"/>        
+    <bean id="professionalDao"
+        class="org.lwt.BMweb.dao.impl.ProfessionalDaoImpl"
+        parent="daoTemplate"/>  
+     <bean id="shoolDao"
+        class="org.lwt.BMweb.dao.impl.ShoolDaoImpl"
+        parent="daoTemplate"/>
+     <bean id="u_infoDao"
+        class="org.lwt.BMweb.dao.impl.U_infoDaoImpl"
+        parent="daoTemplate"/>  
+     <bean id="userDao"
+        class="org.lwt.BMweb.dao.impl.UserDaoImpl"
+        parent="daoTemplate"/>
+     <bean id="zbm_infoDao"
+        class="org.lwt.BMweb.dao.impl.Zbm_infoDaoImpl"
+        parent="daoTemplate"/>
+     <bean id="bbm_infoDao"
+        class="org.lwt.BMweb.dao.impl.Bbm_infoDaoImpl"
+        parent="daoTemplate"/>           
+ 
+ 
+</beans>

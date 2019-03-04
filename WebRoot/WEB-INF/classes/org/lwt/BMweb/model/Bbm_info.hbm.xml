@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- 指定Hibernate映射文件的DTD信息 
+ Hibernate映射文件的根元素 -->
+<hibernate-mapping  package="org.lwt.BMweb.model">
+	<class name="Bbm_info" table="bbm_info">
+  		<!-- 映射标识属性 -->
+        <id column="b_id" name="b_id" type="integer">
+   			 <!-- 指定使用identity主键生成策略 -->
+            <generator class="identity"/>
+        </id>
+ 		 <!-- 映射普通属性 -->
+ 		 <property column="identity" length="30" name="identity" unique="true" not-null="true" type="string"/>
+        <many-to-one name="shool" column="shool1"  not-null="true" lazy="false"/>
+        
+        <many-to-one name="pro_1" column="pro1"  not-null="false" lazy="false"/>
+        <many-to-one name="pro_2" column="pro2"  not-null="false" lazy="false"/>
+        <many-to-one name="pro_3" column="pro3"  not-null="false" lazy="false"/>
+        <many-to-one name="pro_4" column="pro4"  not-null="false" lazy="false"/> 
+        
+	</class>
+</hibernate-mapping>
